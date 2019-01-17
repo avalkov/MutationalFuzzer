@@ -1,0 +1,30 @@
+
+
+#pragma once
+
+#include <windows.h>
+
+typedef enum
+{
+	MUTATE_END = 0,
+	MUTATE_OVERWRITE_BYTE = 0x10,
+	MUTATE_OVERWRITE_WORD,
+	MUTATE_OVERWRITE_DWORD,
+	MUTATE_OVERWRITE_BYTE_WITH_RANDOM,
+	MUTATE_OVERWRITE_WORD_WITH_RANDOM,
+	MUTATE_OVERWRITE_DWORD_WITH_RANDOM,
+	MUTATE_OVERWRITE_BYTES
+
+} __MUTATION_TYPE;
+
+typedef struct
+{
+	__MUTATION_TYPE type;
+
+	BYTE byteValue;
+	WORD wordValue;
+	DWORD dwordValue;
+	BYTE *bytesString;
+	DWORD bytesStringLength;
+
+} __MUTATION;
